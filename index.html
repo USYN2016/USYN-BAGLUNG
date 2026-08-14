@@ -2,8 +2,13 @@
 <html lang="ne">
 <head>
     <meta charset="UTF-8">
-    <title>एकता सामाजिक युवा सञ्जाल</title>
+    <title>एकata सामाजिक युवा सञ्जाल</title>
     <style>
+        /* क्लिक गर्दा सरर्र स्क्रोल हुने इफेक्ट */
+        html {
+            scroll-behavior: smooth;
+        }
+
         /* विन्डोजको आफ्नै मार्जिन हटाउने */
         body, h1, h2, h3, p, ul {
             margin: 0;
@@ -24,6 +29,9 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 30px;
+            position: sticky; /* मेनु बार स्क्रोल गर्दा पनि माथि नै टाँसिरहने */
+            top: 0;
+            z-index: 1000;
         }
 
         .logo {
@@ -103,7 +111,7 @@
 
         /* ३. हाम्रो बारेमा (About Us) सेक्सनको डिजाइन */
         .about-section {
-            padding: 60px 20px;
+            padding: 80px 20px; /* मेनु बारले नछोपोस भनेर प्याडिङ बढाएको */
             text-align: center;
             background-color: #ffffff;
         }
@@ -139,7 +147,7 @@
 
         /* ४. हाम्रो गतिविधि (Activities) सेक्सनको डिजाइन */
         .activities-section {
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
             background-color: #f4f4f4;
         }
@@ -188,7 +196,7 @@
 
         /* ५. सम्पर्क फारम (Contact Form) को डिजाइन */
         .contact-section {
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
             background-color: #ffffff;
         }
@@ -199,7 +207,6 @@
             text-align: left;
         }
 
-        /* इनपुट बक्सहरूको डिजाइन */
         .form-group {
             margin-bottom: 20px;
         }
@@ -224,7 +231,6 @@
             resize: vertical;
         }
 
-        /* फारम बुझाउने बटन */
         .submit-btn {
             background-color: #006400;
             color: white;
@@ -252,7 +258,6 @@
         }
     </style>
 </head>
-
 <body>
 
     <!-- मेनु बार सेक्सन -->
@@ -260,10 +265,9 @@
         <div class="logo">एकता सामाजिक युवा सञ्जाल</div>
         <ul class="nav-links">
             <li><a href="#">गृहपृष्ठ</a></li>
-            <li><a href="#">हाम्रो बारेमा</a></li>
-            <li><a href="#">गतिविधि</a></li>
-            <li><a href="#">सदस्यता फारम</a></li>
-            <li><a href="#">सम्पर्क</a></li>
+            <li><a href="#about">हाम्रो बारेमा</a></li>
+            <li><a href="#activities">गतिविधि</a></li>
+            <li><a href="#contact">सम्पर्क</a></li>
         </ul>
     </nav>
 
@@ -272,12 +276,12 @@
         <div class="hero-content">
             <h1>युवा एकता, समाज रूपान्तरणको मुख्य आधार!</h1>
             <p>एकता सामाजिक युवा सञ्जालमा आबद्ध भई समाज परिवर्तनको संवाहक बन्नुहोस्।</p>
-            <a href="#" class="hero-btn">हामीसँग जोडिनुहोस्</a>
+            <a href="#contact" class="hero-btn">हामीसँग जोडिनुहोस्</a>
         </div>
     </header>
 
-    <!-- हाम्रो बारेमा सेक्सन -->
-    <section class="about-section">
+    <!-- हाम्रो बारेमा सेक्सन (id="about" थपिएको) -->
+    <section id="about" class="about-section">
         <div class="about-container">
             <h2>हाम्रो बारेमा</h2>
             <p><strong>एकता सामाजिक युवा सञ्जाल</strong> युवाहरूको नेतृत्व र क्षमता विकासका लागि प्रतिबद्ध एक सामाजिक संस्था हो। समाजमा सकारात्मक परिवर्तन ल्याउन, सामाजिक विकृतिहरू विरुद्ध सचेतना फैलाउन र समाजसेवाका कार्यहरूमा युवाहरूलाई एकीकृत रूपमा परिचालन गर्नु नै हाम्रो मुख्य उद्देश्य हो।</p>
@@ -285,8 +289,8 @@
         </div>
     </section>
 
-    <!-- हाम्रो गतिविधि सेक्सन -->
-    <section class="activities-section">
+    <!-- हाम्रा गतिविधि सेक्सन (id="activities" थपिएको) -->
+    <section id="activities" class="activities-section">
         <h2>हाम्रा मुख्य गतिविधिहरू</h2>
         
         <div class="activity-grid">
@@ -309,25 +313,9 @@
             </div>
         </div>
     </section>
-        <!-- फोटो ग्यालरी सेक्सन -->
-    <section style="padding: 60px 20px; text-align: center; background-color: #ffffff;">
-        <h2 style="font-size: 32px; color: #006400; margin-bottom: 30px;">कार्यक्रम भिडियो तथा फोटो ग्यालरी</h2>
-        
-        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; max-width: 1100px; margin: 0 auto;">
-            <!-- फोटो १ (अहिले यसमा इन्टरनेटको नमुना फोटो छ, पछि आफ्नो फोटोको लिङ्क राख्न सक्नुहुन्छ) -->
-            <img src="https://picsum.photos" alt="कार्यक्रम फोटो १" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 300px; height: 200px; object-fit: cover;">
-            
-            <!-- फोटो २ -->
-            <img src="https://picsum.photos" alt="कार्यक्रम फोटो २" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 300px; height: 200px; object-fit: cover;">
-            
-            <!-- फोटो ३ -->
-            <img src="https://picsum.photos" alt="कार्यक्रम फोटो ३" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 300px; height: 200px; object-fit: cover;">
-        </div>
-    </section>
 
-
-    <!-- सम्पर्क सेक्सन -->
-    <section class="contact-section">
+    <!-- सम्पर्क सेक्सन (id="contact" थपिएको) -->
+    <section id="contact" class="contact-section">
         <h2>हामीलाई सम्पर्क गर्नुहोस्</h2>
         
         <form class="contact-form" action="#" method="POST">
@@ -343,17 +331,3 @@
             
             <div class="form-group">
                 <label for="message">सन्देश / सुझाव:</label>
-                <textarea id="message" name="message" required placeholder="आफ्नो सन्देश यहाँ टाईप गर्नुहोस्..."></textarea>
-            </div>
-            
-            <button type="submit" class="submit-btn">सन्देश पठाउनुहोस्</button>
-        </form>
-    </section>
-
-    <!-- फुटर सेक्सन -->
-    <footer style="background-color: #222; color: #bbb; text-align: center; padding: 20px; font-size: 14px; margin-top: 40px;">
-        <p>&copy; २०२६ एकता सामाजिक युवा सञ्जाल। सबै अधिकार सुरक्षित।</p>
-    </footer>
-
-     
-    <footer>
