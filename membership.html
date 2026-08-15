@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8">
+    <title>सदस्यता फारम - एकता सामाजिक युवा सञ्जाल</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* मेनु बार */
+        .navbar {
+            background-color: #006400;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background-color: #ff4500;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #d03700;
+        }
+
+        /* फारम बक्स */
+        .form-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-container h2 {
+            color: #006400;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            height: 80px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: #006400;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #004d00;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: #bbb;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- मेनु बार -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">एकता सामाजिक युवा सञ्जाल</a>
+        <a href="index.html" class="back-btn">← मुख्य पेजमा फर्कनुहोस्</a>
+    </nav>
+
+    <!-- सदस्यता फारम -->
+    <div class="form-container">
+        <h2>अनलाइन सदस्यता आवेदन फारम</h2>
+        
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="fullname">पूरा नाम (Full Name):</label>
+                <input type="text" id="fullname" name="fullname" required placeholder="तपाईंको पूरा नाम लेख्नुहोस्">
+            </div>
+
+            <div class="form-group">
+                <label for="address">स्थायी ठेगाना (Address):</label>
+                <input type="text" id="address" name="address" required placeholder="जस्तै: बागलुङ, नेपाल">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">मोबाइल नम्बर (Phone Number):</label>
+                <input type="tel" id="phone" name="phone" required placeholder="९८XXXXXXXX">
+            </div>
+
+            <div class="form-group">
+                <label for="email">इमेल ठेगाना (Email):</label>
+                <input type="email" id="email" name="email" required placeholder="example@gmail.com">
+            </div>
+
+            <div class="form-group">
+                <label for="gender">लिङ्ग (Gender):</label>
+                <select id="gender" name="gender" required>
+                    <option value="">छनोट गर्नुहोस्</option>
+                    <option value="male">पुरुष</option>
+                    <option value="female">महिला</option>
+                    <option value="other">अन्य</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="interest">तपाईं कुन विधामा योगदान दिन चाहनुहुन्छ?</label>
+                <select id="interest" name="interest" required>
+                    <option value="">विधा छनोट गर्नुहोस्</option>
+                    <option value="volunteer">सामाजिक कार्य तथा स्वयंसेवा</option>
+                    <option value="sports">खेलकुद तथा अतिरिक्त क्रियाकलाप</option>
+                    <option value="it">प्रविधि तथा प्रचार-प्रसार (IT)</option>
+                    <option value="art">कला, साहित्य तथा संस्कृति</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">संस्थामा जोडिनुको मुख्य कारण (छोटोमा):</label>
+                <textarea id="message" name="message" placeholder="आफ्नो विचार लेख्नुहोस्..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">सदस्यताको लागि आवेदन दिनुहोस्</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; २०२६ एकता सामाजिक युवा सञ्जाल। सबै अधिकार सुरक्षित।</p>
+    </footer>
+
+</body>
+</html>
